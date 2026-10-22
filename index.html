@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shigatsu Youka — jumpscare-free reader</title><link rel="stylesheet" href="reader.css">
+<style>
+.lang{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0}
+.lang a{display:block;flex:1 1 260px;background:var(--panel);border:1px solid #3a3e49;border-radius:10px;padding:18px;text-decoration:none;color:var(--text)}
+.lang a:hover{background:#2a2d35}
+.lang b{display:block;font-size:20px;margin-bottom:4px}
+.lang small{color:var(--muted)}
+.ex{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:center;background:var(--panel);border:1px solid #3a3e49;border-radius:10px;padding:12px;margin:16px 0;max-width:720px}
+.ex .pic{height:112px;background:#111 linear-gradient(135deg,#2b3a55,#1a2233);border:1px solid #3a3e49;position:relative}
+.ex .pic i{position:absolute;left:40px;bottom:0;width:70px;height:90px;background:#6b5b95;border-radius:35px 35px 0 0}
+.ex .pic b{position:absolute;right:30px;bottom:0;width:60px;height:80px;background:#8a6d3b;border-radius:30px 30px 0 0}
+.ex .txt{font-family:Georgia,serif;line-height:1.5}
+.ex .txt span{color:#f0c060}
+main h2{margin-top:28px}
+main li{margin:4px 0}
+</style></head><body>
+<header><b>Shigatsu Youka</b> · jumpscare-free reader</header>
+<main>
+<h1>Read Shigatsu Youka as a web page</h1>
+<p class="meta">死月妖花～四月八日～ by New++ (free LiveMaker visual novel). This page shows the whole game as still pictures and text, nothing moves, nothing makes a sound, and the game's one screamer is not included. It unlocks scenes in the same order as the game, so it does not spoil the structure.</p>
+
+<div class="lang">
+<a href="en/index.html"><b>English</b><small>Fan translation (unofficial). 205 scenes, encyclopedia, references, chatter.</small></a>
+<a href="jp/index.html"><b>日本語</b><small>原文のまま。205シナリオ、事典、リファレンス、雑談。</small></a>
+</div>
+
+<h2>What a page looks like</h2>
+<div class="ex"><div class="pic"><i></i><b></b></div><div class="txt"><span>Natsumi</span><br>One row is one text box of the game, next to the picture that was on screen for it. You scroll down at your own pace.</div></div>
+
+<h2>How it works</h2>
+<ul>
+<li><b>Scenes unlock like the game.</b> At the start only the first scene is listed. Mark a scene as read (button at its end, or scroll to the end) and the scenes it unlocks appear. The <b>story chart</b> shows the same thing as the game's navigator: time flows down, lines connect a scene to the scenes it follows.</li>
+<li><b>Progress stays in your browser.</b> Nothing is sent anywhere. Use <b>Export progress</b> at the bottom of the scene list to save a small file, and <b>Import progress</b> on another device. Clearing site data erases the marks.</li>
+<li><b>No spoilers by default.</b> Locked scenes, table rows and arcs are hidden until reached. "Reveal everything" shows all of it at once; it asks first.</li>
+<li><b>What is missing on purpose.</b> Sound, music, screen shakes, fades, timed effects, the one screamer (the English patch ships a note about it). Animated pictures show one frame. Videos show their first frame.</li>
+<li><b>Mika's live commentary, chatter topics, the encyclopedia and the reference documents</b> are under "Tables" on the scene list, gated the same way.</li>
+</ul>
+
+<h2>Playing the real game</h2>
+<p>The game is free: <a href="https://www.freem.ne.jp/win/game/19917">freem game 19917</a>. The English patch and its notes (including how the screamer triggers and how to switch it off in the game) are at <a href="https://github.com/Nostramadeus/shigatsu-youka-english-translation">the translation repository</a>. This reader is built from the same translation.</p>
+<p class="meta">Unofficial fan project. Pictures and text belong to the game's author. If you are the author and want this taken down, open an issue on the repository and it will be removed.</p>
+</main>
+<footer>Built from the game's own scripts and tables. No tracking, no cookies beyond your browser's local storage.</footer>
+</body></html>

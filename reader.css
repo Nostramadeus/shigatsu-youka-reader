@@ -1,0 +1,65 @@
+:root{--bg:#15161a;--panel:#1e2026;--text:#e6e6e6;--muted:#9a9ca6;--accent:#7fb3ff;--box:#101114}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Georgia,"Noto Serif","Yu Mincho",serif}
+header{position:sticky;top:0;z-index:5;background:var(--panel);padding:8px 16px;border-bottom:1px solid #2a2d35;font-family:system-ui,sans-serif;font-size:14px}
+header a{color:var(--accent);text-decoration:none}
+.crumb{color:var(--muted);margin-left:8px}
+main{max-width:1180px;margin:0 auto;padding:16px}
+footer{max-width:1180px;margin:24px auto;padding:16px;color:var(--muted);font-family:system-ui,sans-serif;font-size:14px;border-top:1px solid #2a2d35}
+h1{font-size:26px;margin:8px 0 4px}
+h2{font-size:20px;margin:28px 0 8px;font-family:system-ui,sans-serif}
+.meta,.summary{color:var(--muted);font-family:system-ui,sans-serif;font-size:14px;margin:0 0 12px}
+.summary{color:var(--text);font-style:italic}
+a{color:var(--accent)}
+button{background:#2a2d35;color:var(--text);border:1px solid #3a3e49;border-radius:6px;padding:6px 12px;font:14px system-ui,sans-serif;cursor:pointer}
+button:hover{background:#343845}
+
+/* one row = screen state + one text box */
+.row{display:grid;grid-template-columns:480px 1fr;gap:16px;align-items:start;padding:12px 0;border-bottom:1px solid #23262e}
+.shot{width:480px;height:270px;overflow:hidden;background:#000;border-radius:4px;position:relative}
+.cv{width:960px;height:540px;position:relative;transform:scale(.5);transform-origin:0 0}
+.cv img,.cv .fill,.cv .miss{position:absolute}
+.cv .fill{left:0;top:0;width:960px;height:540px}
+.cv .miss{left:0;top:0;width:960px;height:540px;background:repeating-linear-gradient(45deg,#2a2d35 0 20px,#1e2026 20px 40px)}
+.movtag{position:absolute;left:12px;top:12px;font:24px system-ui,sans-serif;color:#fff;background:rgba(0,0,0,.5);padding:4px 10px;border-radius:6px}
+.box{background:var(--box);border:1px solid #2a2d35;border-radius:6px;padding:14px 18px;min-height:80px;white-space:pre-line;font-size:17px}
+.box span{font-weight:normal}
+.end{margin:28px 0;padding:16px;background:var(--panel);border-radius:8px;font-family:system-ui,sans-serif;display:flex;gap:16px;align-items:center}
+.end .marked{display:none;color:#8fd18f}
+.end.done .marked{display:inline}
+.end.done .mark{display:none}
+.end .next[hidden]{display:none}
+.empty{color:var(--muted)}
+
+/* index */
+.arc ol{list-style:none;padding:0;margin:0}
+.arc li{display:flex;gap:10px;align-items:baseline;padding:6px 8px;border-bottom:1px solid #23262e}
+.arc li a{text-decoration:none;color:var(--text);flex:1}
+.arc li a:hover{color:var(--accent)}
+.arc .date{color:var(--muted);font-family:system-ui,sans-serif;font-size:13px;display:inline-block;min-width:200px}
+.arc .kind{color:var(--muted);font-family:system-ui,sans-serif}
+.arc .tick{color:#5a5e68;cursor:pointer;padding:0 6px}
+.arc .tick:hover{color:var(--text)}
+.arc li.read .tick{color:#8fd18f}
+.arcall{font-size:12px;padding:2px 8px;vertical-align:middle}
+.arc li[hidden]{display:none}
+.lockcount{color:var(--muted);font-weight:normal;font-size:14px}
+.tables ul,.others ul{columns:2;font-family:system-ui,sans-serif;font-size:15px}
+.others .snip{color:var(--muted);font-size:13px}
+
+/* tables */
+table{border-collapse:collapse;width:100%;font-family:system-ui,sans-serif;font-size:14px;margin:8px 0 24px}
+th,td{border:1px solid #2a2d35;padding:6px 8px;vertical-align:top;text-align:left}
+th{background:var(--panel);position:sticky;top:42px}
+th small{display:block;color:var(--muted);font-weight:normal;font-size:11px}
+tr[hidden],div[hidden]{display:none}
+.refpic{max-width:300px;display:block;margin-bottom:4px}
+
+@media (max-width:900px){.row{grid-template-columns:1fr}.tables ul,.others ul{columns:1}}
+
+.next{background:var(--panel);border:1px solid #3a3e49;border-radius:8px;padding:4px 16px 8px;margin:12px 0 20px}
+.next h2{margin:8px 0;font-size:16px}
+.next ul{margin:4px 0;padding-left:20px}
+.next li{margin:3px 0}
+.next small{color:var(--muted);margin-left:6px}
+.chartpage header #nextinfo a{margin-left:8px}

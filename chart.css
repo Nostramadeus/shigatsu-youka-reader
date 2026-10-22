@@ -1,0 +1,21 @@
+/* Story chart: copies the game's navigator geometry (row 30 px, node 40x30, column 83 px, time column 230 px). */
+body.chartpage{overflow:auto}
+.chartpage header .opt{margin-left:16px;color:var(--muted)}
+#chart{position:relative;margin:0 0 200px 0;min-height:400px}
+#lines{position:absolute;left:0;top:0;pointer-events:none}
+#lines path{fill:none;stroke:#aab1c4;stroke-width:1;shape-rendering:crispEdges}
+#timecol{position:absolute;left:0;top:0;width:230px}
+#timecol .t{position:absolute;left:0;height:30px;line-height:30px;width:210px;padding:0 8px;box-sizing:border-box;font:13px system-ui,sans-serif;color:#cfd3dc;background:#1b1d23;border-bottom:1px solid #2a2d35;white-space:nowrap;overflow:hidden}
+#timecol .t.alt{background:#15171c}
+#nodes{position:absolute;left:0;top:0}
+.arcname{position:absolute;top:0;height:40px;line-height:40px;font:bold 13px system-ui,sans-serif;color:#dfe3ea;white-space:nowrap;border-left:1px solid #3a3e49;padding-left:6px;box-sizing:border-box;overflow:hidden}
+.node{position:absolute;width:40px;height:30px;box-sizing:border-box;cursor:pointer;background:#2a0000 center/cover no-repeat;border:1px solid #ffff00}
+.node.read{border-color:#3a3e49}
+.node:hover{outline:2px solid #fff;z-index:3}
+.node .lbl{position:absolute;left:44px;top:0;height:30px;line-height:30px;font:12px system-ui,sans-serif;color:#dfe3ea;white-space:nowrap;display:none;text-shadow:0 0 3px #000}
+.titles .node .lbl{display:block}
+.node.read .lbl{color:#9aa0ad}
+#card{position:fixed;right:16px;bottom:16px;width:260px;background:var(--panel);border:1px solid #3a3e49;border-radius:8px;padding:8px;z-index:9;pointer-events:none;font:13px system-ui,sans-serif;color:var(--text)}
+#card img{display:block;width:240px;height:135px;object-fit:cover;background:#000;margin:0 auto 6px}
+#card .bar{height:6px;background:#2a2d35;margin-top:6px}
+#card .bar i{display:block;height:6px;background:#ff3b3b}
