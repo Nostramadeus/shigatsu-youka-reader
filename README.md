@@ -10,7 +10,7 @@ A static web page that shows the free LiveMaker visual novel 死月妖花～四�
 
 Read it here: https://nostramadeus.github.io/shigatsu-youka-reader/
 
-- No sound, no timing, no screen shakes, and the game's one screamer is not included.
+- No sound, no timing or screen shakes; the optional encyclopedia screamer is omitted. Other still images can still be disturbing.
 - Progress is kept in your browser only (export / import buttons on the scene list).
 - The translation and the playable English patch live at https://github.com/Nostramadeus/shigatsu-youka-english-translation
 - The game itself: https://www.freem.ne.jp/win/game/19917
