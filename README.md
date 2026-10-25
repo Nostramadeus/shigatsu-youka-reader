@@ -1,5 +1,7 @@
 # Shigatsu Youka — jumpscare-free reader
 
+**Contact:** [afrotankrob@gmail.com](mailto:afrotankrob@gmail.com)
+
 A static web page that shows the free LiveMaker visual novel 死月妖花～四月八日～ (Shigatsu Youka, by New++) as still pictures and text: one row per text box, next to what was on screen for it. English (unofficial fan translation) and Japanese. Scenes unlock in the same order as the game; the story chart mirrors the game's navigator.
 
 Read it here: https://nostramadeus.github.io/shigatsu-youka-reader/
