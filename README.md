@@ -2,7 +2,11 @@
 
 **Contact:** [afrotankrob@gmail.com](mailto:afrotankrob@gmail.com)
 
-A static web page that shows the free LiveMaker visual novel 死月妖花～四月八日～ (Shigatsu Youka, by New++) as still pictures and text: one row per text box, next to what was on screen for it. English (unofficial fan translation) and Japanese. Scenes unlock in the same order as the game; the story chart mirrors the game's navigator.
+## Important: a rough reader with known mistakes
+
+I made this mainly for myself, to get the general story without the scares. It is **not a faithful recreation of the game**. Reported problems include extra or mismatched scene text and scenes or links that do not work. **I do not plan to fix every reader issue.** For the intended scene order, choices and presentation, use the English-patched game.
+
+A static web page that shows the free LiveMaker visual novel 死月妖花～四月八日～ (Shigatsu Youka, by New++) as still pictures and text: one row per text box, next to a reconstructed screen. English (unofficial fan translation) and Japanese. Its approximate scene unlocks and story chart are based on the game's navigator; they do not reproduce every game branch or condition.
 
 Read it here: https://nostramadeus.github.io/shigatsu-youka-reader/
 
