@@ -63,3 +63,10 @@ tr[hidden],div[hidden]{display:none}
 .next li{margin:3px 0}
 .next small{color:var(--muted);margin-left:6px}
 .chartpage header #nextinfo a{margin-left:8px}
+
+/* scene page: lock notice, other-branch text, hidden-route link (2026-10-30) */
+.locknote{color:var(--muted);font-family:system-ui,sans-serif;font-size:13px;margin:8px 0 0}
+.otherbranch{margin:20px 0;border:1px solid #2a2d35;border-radius:8px;padding:8px 12px}
+.otherbranch summary{cursor:pointer;color:var(--muted);font-family:system-ui,sans-serif;font-size:14px}
+.hiddenlink{font-family:system-ui,sans-serif;font-size:14px}
+.end{flex-wrap:wrap}

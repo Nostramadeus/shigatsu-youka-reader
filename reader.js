@@ -8,7 +8,10 @@
   try { reveal = localStorage.getItem(RKEY) === '1'; } catch (e) {}
 
   function unlocked(li) {
-    if (reveal) return true;
+    return reveal || unlockedByProgress(li);
+  }
+  /* the same rule from the read set alone, ignoring "reveal everything" */
+  function unlockedByProgress(li) {
     if (li.dataset.initial) return true;
     var req = li.dataset.require;
     if (req) return req.split(',').every(function (x) { return read.has(+x); });
@@ -49,10 +52,11 @@
         ids.forEach(function (x) { read.add(x); }); save(read); location.reload();
       };
     });
-    /* next-step hint: unlocked scenes not read yet, in story order */
+    /* next-step hint: unlocked scenes not read yet, in story-chart order (chart row, then navigator position) */
     var nb = document.getElementById('nextbody');
     if (nb) {
       var todo = Array.from(document.querySelectorAll('.arc li')).filter(function (li) { return !li.hidden && !read.has(+li.dataset.id); });
+      todo.sort(function (a, b) { return +a.dataset.ord - +b.dataset.ord; });
       if (todo.length) {
         var h = '<p>Unlocked and not read yet. Reading these is how the story moves on:</p><ul>';
         todo.slice(0, 8).forEach(function (li) {
@@ -116,6 +120,9 @@
   }
 
   /* ---- scene page ---- */
+  var lockNote = document.querySelector('.locknote');
+  if (lockNote) lockNote.hidden = read.has(+lockNote.dataset.id) || unlockedByProgress(lockNote);
+  document.querySelectorAll('.revealonly').forEach(function (el) { el.hidden = !reveal; });
   var end = document.querySelector('.end');
   if (end) {
     var id = +end.dataset.scene;

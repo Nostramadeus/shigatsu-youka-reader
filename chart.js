@@ -91,7 +91,7 @@
     el.className = 'node' + (read.has(n.id) ? ' read' : '');
     el.href = 'scene/' + n.id + '.html';
     el.style.left = p[0] + 'px'; el.style.top = p[1] + 'px';
-    if (read.has(n.id)) el.style.backgroundImage = 'url(img/nav/thumb/' + n.id + '.png)';
+    if (read.has(n.id)) el.style.backgroundImage = 'url(../img/nav/thumb/' + n.id + '.png)';
     var l = document.createElement('span');
     l.className = 'lbl'; l.textContent = n.t;
     el.appendChild(l);
@@ -130,7 +130,7 @@
   var todo = shown.filter(function (n) { return !read.has(n.id); });
   var ni = document.getElementById('nextinfo');
   if (todo.length) {
-    var first = todo.reduce(function (a, b) { return a._y <= b._y ? a : b; });
+    var first = todo.reduce(function (a, b) { return +a.ord <= +b.ord ? a : b; });  // story-chart order, same as the index "Next" box
     ni.innerHTML = ' · <b>Next:</b> ' + todo.length + ' unlocked scene' + (todo.length > 1 ? 's' : '') + ' not read (yellow boxes).' +
       ' <a href="#" id="jumpnext">Jump to the first</a>';
     document.getElementById('jumpnext').onclick = function (e) {
