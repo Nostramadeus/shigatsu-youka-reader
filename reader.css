@@ -66,7 +66,18 @@ tr[hidden],div[hidden]{display:none}
 
 /* scene page: lock notice, other-branch text, hidden-route link (2026-10-30) */
 .locknote{color:var(--muted);font-family:system-ui,sans-serif;font-size:13px;margin:8px 0 0}
-.otherbranch{margin:20px 0;border:1px solid #2a2d35;border-radius:8px;padding:8px 12px}
-.otherbranch summary{cursor:pointer;color:var(--muted);font-family:system-ui,sans-serif;font-size:14px}
 .hiddenlink{font-family:system-ui,sans-serif;font-size:14px}
+
+/* route chooser: a small navigator panel (game colours: dark panel, yellow frame 65535) */
+.routes{margin:12px 0 20px;padding:10px 14px 12px;background:#0d0d10;border:1px solid #c8b400;border-radius:6px;font-family:system-ui,sans-serif}
+.routes-h{margin:0 0 8px;color:#e8d84a;font-size:13px;letter-spacing:.04em}
+.routes .opts{display:flex;flex-wrap:wrap;gap:8px}
+.routes .opt{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:180px;padding:7px 12px;background:#1b1c22;color:var(--text);border:1px solid #4a4d58;border-radius:4px;font:14px system-ui,sans-serif;text-decoration:none;text-align:left;cursor:pointer}
+.routes .opt:hover{background:#262833;border-color:#e8d84a}
+.routes .opt[aria-pressed="true"]{border-color:#e8d84a;background:#2a2817;color:#fff4a8}
+.routes .opt.locked,.routes .opt:disabled{cursor:not-allowed;color:#6d707a;background:#141519;border-color:#2c2e36}
+.routes .opt .why{color:var(--muted);font-size:12px;line-height:1.35}
+.routes .opt .why[hidden]{display:none}
+.route[hidden]{display:none}
+.routeh{font-size:16px;color:#e8d84a;border-bottom:1px solid #3a3a22;padding-bottom:4px}
 .end{flex-wrap:wrap}

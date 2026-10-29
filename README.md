@@ -11,7 +11,7 @@ A static web page that shows the free LiveMaker visual novel 死月妖花～四�
 Read it here: https://nostramadeus.github.io/shigatsu-youka-reader/
 
 - No sound, no timing or screen shakes; the optional encyclopedia screamer is omitted. Other still images can still be disturbing.
-- Choices and branch conditions are not shown; the reader follows the normal route.
+- Scenes with a branch or a hidden route start with a small "Play options" panel, like the game's scenario navigator: read from the start, from just before the branch, the other branch, or the hidden route. An option opens by the game's rule, approximated from the scenes you marked read; until then it is greyed with the reason. Other scenes follow the normal route.
 - Progress is kept in your browser only (export / import buttons on the scene list).
 - The translation and the playable English patch live at https://github.com/Nostramadeus/shigatsu-youka-english-translation
 - The game itself: https://www.freem.ne.jp/win/game/19917

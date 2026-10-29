@@ -21,7 +21,27 @@
     return p ? read.has(+p) : false;
   }
 
-  window.SY = { read: read, reveal: reveal, unlocked: unlocked, save: save };
+  /* route chooser option: '' when it may be opened, else the first unmet condition's reason (the game's rule mapped to
+     the read set, see build/make_routes.py). data-conds = [[scene ids that must all be read (null = never), reason,
+     gate data of the scene the reason names (optional)], ...]. A reason that names a scene the read set has not unlocked
+     yet is replaced by the panel's anonymous text (later). */
+  function optionLock(o, later) {
+    if (o.dataset.never) return o.dataset.never;
+    if (reveal) return '';
+    var conds = [];
+    try { conds = JSON.parse(o.dataset.conds || '[]'); } catch (e) {}
+    for (var i = 0; i < conds.length; i++) {
+      var need = conds[i][0];
+      if (need === null || !need.every(function (x) { return read.has(+x); })) {
+        if (conds[i].length < 3) return conds[i][1];
+        var g = conds[i][2];
+        return g && unlockedByProgress({ dataset: g }) ? conds[i][1] : (later || 'Read a later scene first');
+      }
+    }
+    return '';
+  }
+
+  window.SY = { read: read, reveal: reveal, unlocked: unlocked, unlockedByProgress: unlockedByProgress, save: save, optionLock: optionLock };
 
   /* ---- index ---- */
   var arcs = document.querySelectorAll('.arc');
@@ -123,6 +143,29 @@
   var lockNote = document.querySelector('.locknote');
   if (lockNote) lockNote.hidden = read.has(+lockNote.dataset.id) || unlockedByProgress(lockNote);
   document.querySelectorAll('.revealonly').forEach(function (el) { el.hidden = !reveal; });
+  /* route chooser: switch the text to the chosen play option; locked options stay visible, greyed, with the reason */
+  var chooser = document.querySelector('.routes');
+  if (chooser) {
+    var nboxes = document.querySelector('.nboxes');
+    var opts = chooser.querySelectorAll('.opt');
+    var showRoute = function (name) {
+      document.querySelectorAll('.route').forEach(function (r) { r.hidden = r.dataset.route !== name; });
+      opts.forEach(function (o) { if (o.dataset.route) o.setAttribute('aria-pressed', o.dataset.route === name ? 'true' : 'false'); });
+      if (nboxes && nboxes.dataset[name] != null) nboxes.textContent = nboxes.dataset[name];
+    };
+    opts.forEach(function (o) {
+      var why = optionLock(o, chooser.dataset.later), w = o.querySelector('.why');
+      o.classList.toggle('locked', !!why);
+      if (w) { w.textContent = why; w.hidden = !why; }
+      if (o.tagName === 'A') {
+        if (why) { o.removeAttribute('href'); o.setAttribute('aria-disabled', 'true'); }
+        else { o.setAttribute('href', o.dataset.href); o.removeAttribute('aria-disabled'); }
+      } else {
+        o.disabled = !!why;
+        if (!why && o.dataset.route) o.onclick = function () { showRoute(o.dataset.route); };
+      }
+    });
+  }
   var end = document.querySelector('.end');
   if (end) {
     var id = +end.dataset.scene;
